@@ -1,0 +1,399 @@
+/* === CSS Variables for Blue Color Scheme === */
+:root {
+    --primary-blue: #2563eb;
+    --secondary-blue: #3b82f6;
+    --light-blue: #60a5fa;
+    --lighter-blue: #dbeafe;
+    --dark-blue: #1e40af;
+    --text-dark: #1e293b;
+    --text-light: #64748b;
+    --white: #ffffff;
+    --light-gray: #f8fafc;
+    --border-color: #e2e8f0;
+}
+
+/* === Reset and Base Styles === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--white);
+}
+
+/* === Container === */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* === Header and Navigation === */
+header {
+    background-color: var(--white);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 20px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-blue);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--primary-blue);
+}
+
+/* === Hero Section === */
+#hero {
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--dark-blue) 100%);
+    color: var(--white);
+    padding: 120px 20px 100px;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    animation: fadeInUp 0.8s ease;
+}
+
+.highlight {
+    color: var(--lighter-blue);
+}
+
+.tagline {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--lighter-blue);
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* === Bio Section === */
+#bio {
+    padding: 80px 20px;
+    background-color: var(--light-gray);
+}
+
+#bio h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--primary-blue);
+    margin-bottom: 3rem;
+}
+
+.bio-content {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.profile-photo {
+    flex-shrink: 0;
+}
+
+.photo-placeholder {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--secondary-blue) 0%, var(--light-blue) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    box-shadow: 0 8px 24px rgba(37, 99, 235, 0.3);
+}
+
+.photo-placeholder svg {
+    width: 100px;
+    height: 100px;
+}
+
+.bio-text h3 {
+    font-size: 2rem;
+    color: var(--primary-blue);
+    margin-bottom: 0.5rem;
+}
+
+.bio-title {
+    font-size: 1.2rem;
+    color: var(--secondary-blue);
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.bio-text p {
+    color: var(--text-light);
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+/* === Projects Section === */
+#projects {
+    padding: 80px 20px;
+    background-color: var(--white);
+}
+
+#projects h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--primary-blue);
+    margin-bottom: 3rem;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.project-card {
+    background-color: var(--white);
+    border: 2px solid var(--border-color);
+    border-radius: 12px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(37, 99, 235, 0.2);
+    border-color: var(--primary-blue);
+}
+
+.project-card h3 {
+    color: var(--primary-blue);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.project-card p {
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+}
+
+.project-link {
+    display: inline-block;
+    color: var(--primary-blue);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.project-link:hover {
+    color: var(--dark-blue);
+}
+
+/* === Contact Section === */
+#contact {
+    padding: 80px 20px;
+    background: linear-gradient(135deg, var(--lighter-blue) 0%, var(--white) 100%);
+}
+
+#contact h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--primary-blue);
+    margin-bottom: 1.5rem;
+}
+
+.contact-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact-intro {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    margin-bottom: 2rem;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.social-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: var(--primary-blue);
+    color: var(--white);
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+.social-btn:hover {
+    background-color: var(--dark-blue);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(37, 99, 235, 0.4);
+}
+
+.social-btn svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* === Footer === */
+footer {
+    background-color: var(--dark-blue);
+    color: var(--white);
+    text-align: center;
+    padding: 2rem;
+}
+
+footer p {
+    opacity: 0.9;
+}
+
+/* === Animations === */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* === Responsive Design === */
+@media screen and (max-width: 768px) {
+    /* Navigation */
+    nav {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .nav-links {
+        gap: 1rem;
+    }
+
+    /* Hero */
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .tagline {
+        font-size: 1.2rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    /* Bio Section */
+    .bio-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .photo-placeholder {
+        width: 150px;
+        height: 150px;
+    }
+
+    .photo-placeholder svg {
+        width: 75px;
+        height: 75px;
+    }
+
+    .bio-text h3 {
+        font-size: 1.5rem;
+    }
+
+    /* Projects */
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Contact */
+    .social-links {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .social-btn {
+        justify-content: center;
+    }
+
+    /* Section headings */
+    #bio h2,
+    #projects h2,
+    #contact h2 {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 1.5rem;
+    }
+
+    .tagline {
+        font-size: 1rem;
+    }
+
+    .project-card {
+        padding: 1.5rem;
+    }
+
+    .social-btn {
+        padding: 0.875rem 1.5rem;
+    }
+}
