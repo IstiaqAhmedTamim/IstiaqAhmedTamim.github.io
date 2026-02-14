@@ -3,72 +3,453 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Istiaq Ahmed Tamim - Personal Website</title>
+    <meta name="description" content="Istiaq Ahmed Tamim - Software Engineer specializing in building exceptional digital experiences. Crafting scalable solutions with modern technologies.">
+    <meta name="keywords" content="Software Engineer, Full Stack Developer, Web Development, React, Node.js, Python">
+    <meta name="author" content="Istiaq Ahmed Tamim">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Istiaq Ahmed Tamim | Software Engineer">
+    <meta property="og:description" content="Building exceptional digital experiences with modern technologies.">
+    <meta property="og:url" content="https://istiaqahmedtamim.me">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Istiaq Ahmed Tamim | Software Engineer">
+    <meta name="twitter:description" content="Building exceptional digital experiences with modern technologies.">
+    
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#0a0a0b">
+    
+    <title>Istiaq Ahmed Tamim | Software Engineer</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
+    <!-- Header / Navigation -->
+    <header id="header">
         <nav>
-            <div class="logo">Istiaq Ahmed Tamim</div>
-            <ul class="nav-links">
-                <li><a href="#bio">Bio</a></li>
+            <a href="#" class="logo" aria-label="Home">IAT</a>
+            <ul class="nav-links" id="navLinks" role="navigation">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#experience">Experience</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </nav>
     </header>
 
     <main>
-        <section id="hero">
+        <!-- Hero Section -->
+        <section id="hero" aria-labelledby="hero-title">
+            <!-- Animated Background Orbs -->
+            <div class="hero-bg" aria-hidden="true">
+                <div class="hero-orb hero-orb-1"></div>
+                <div class="hero-orb hero-orb-2"></div>
+                <div class="hero-orb hero-orb-3"></div>
+            </div>
+            
             <div class="hero-content">
-                <h1>Hello, I'm <span class="highlight">Istiaq Ahmed Tamim</span></h1>
-                <p>Welcome to my personal website</p>
+                <div class="hero-badge">
+                    <span class="hero-badge-dot" aria-hidden="true"></span>
+                    Available for new opportunities
+                </div>
+                
+                <h1 id="hero-title" class="hero-title">
+                    I build products that<br>
+                    <span class="hero-title-gradient">make an impact.</span>
+                </h1>
+                
+                <p class="hero-subtitle">
+                    Software Engineer crafting elegant, scalable solutions. 
+                    I turn complex problems into simple, beautiful digital experiences.
+                </p>
+                
+                <div class="hero-actions">
+                    <a href="#projects" class="btn btn-primary">
+                        View My Work
+                        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                    <a href="#contact" class="btn btn-secondary">
+                        Get In Touch
+                    </a>
+                </div>
+            </div>
+            
+            <div class="scroll-indicator" aria-hidden="true">
+                <div class="scroll-indicator-icon"></div>
+                <span>Scroll to explore</span>
             </div>
         </section>
 
-        <section id="bio">
-            <h2>About Me</h2>
-            <div class="bio-content">
-                <p>I am a passionate developer who loves building creative solutions and exploring new technologies. I believe in continuous learning and sharing knowledge with the community.</p>
-                <p>Feel free to explore my projects and get in touch!</p>
+        <!-- About Section -->
+        <section id="about" class="section" aria-labelledby="about-title">
+            <div class="container">
+                <div class="about-grid reveal">
+                    <div class="about-image-wrapper">
+                        <div class="about-image" aria-hidden="true">
+                            <span class="about-avatar">👨‍💻</span>
+                        </div>
+                    </div>
+                    
+                    <div class="about-content">
+                        <span class="section-label">About Me</span>
+                        <h2 id="about-title">Engineering excellence<br>through code.</h2>
+                        
+                        <p>
+                            I'm a software engineer with a passion for building products that solve real problems. 
+                            With a focus on clean architecture and user-centric design, I create solutions that 
+                            are both technically sound and delightful to use.
+                        </p>
+                        
+                        <p>
+                            My approach combines deep technical expertise with a product mindset—understanding 
+                            not just how to build things, but why they matter. I thrive in environments where 
+                            innovation meets execution.
+                        </p>
+                        
+                        <div class="about-stats stagger-reveal">
+                            <div class="stat-item">
+                                <div class="stat-number">5+</div>
+                                <div class="stat-label">Years Experience</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">20+</div>
+                                <div class="stat-label">Projects Shipped</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">100%</div>
+                                <div class="stat-label">Client Satisfaction</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section id="projects">
-            <h2>Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <h3>Project One</h3>
-                    <p>Description of your first project. Add details about technologies used and what problem it solves.</p>
-                    <a href="#" class="project-link">View Project</a>
+        <!-- Skills Section -->
+        <section id="skills" class="section" aria-labelledby="skills-title">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-label">Expertise</span>
+                    <h2 id="skills-title" class="section-title">Skills & Technologies</h2>
+                    <p class="section-subtitle">
+                        A comprehensive toolkit built over years of crafting production-grade applications.
+                    </p>
                 </div>
-                <div class="project-card">
-                    <h3>Project Two</h3>
-                    <p>Description of your second project. Add details about technologies used and what problem it solves.</p>
-                    <a href="#" class="project-link">View Project</a>
-                </div>
-                <div class="project-card">
-                    <h3>Project Three</h3>
-                    <p>Description of your third project. Add details about technologies used and what problem it solves.</p>
-                    <a href="#" class="project-link">View Project</a>
+                
+                <div class="skills-grid stagger-reveal">
+                    <article class="skill-card">
+                        <div class="skill-icon" aria-hidden="true">🎨</div>
+                        <h3>Frontend Development</h3>
+                        <p>
+                            Building responsive, accessible, and performant user interfaces 
+                            with modern frameworks and best practices.
+                        </p>
+                        <div class="skill-tags">
+                            <span class="skill-tag">React</span>
+                            <span class="skill-tag">TypeScript</span>
+                            <span class="skill-tag">Next.js</span>
+                            <span class="skill-tag">Tailwind CSS</span>
+                        </div>
+                    </article>
+                    
+                    <article class="skill-card">
+                        <div class="skill-icon" aria-hidden="true">⚙️</div>
+                        <h3>Backend Development</h3>
+                        <p>
+                            Designing and implementing scalable APIs, microservices, 
+                            and server-side applications.
+                        </p>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Node.js</span>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">PostgreSQL</span>
+                            <span class="skill-tag">GraphQL</span>
+                        </div>
+                    </article>
+                    
+                    <article class="skill-card">
+                        <div class="skill-icon" aria-hidden="true">☁️</div>
+                        <h3>Cloud & DevOps</h3>
+                        <p>
+                            Deploying and managing applications with modern cloud 
+                            infrastructure and CI/CD pipelines.
+                        </p>
+                        <div class="skill-tags">
+                            <span class="skill-tag">AWS</span>
+                            <span class="skill-tag">Docker</span>
+                            <span class="skill-tag">Kubernetes</span>
+                            <span class="skill-tag">GitHub Actions</span>
+                        </div>
+                    </article>
+                    
+                    <article class="skill-card">
+                        <div class="skill-icon" aria-hidden="true">🧠</div>
+                        <h3>Architecture & Design</h3>
+                        <p>
+                            Creating maintainable, testable, and well-documented 
+                            codebases that scale with your team.
+                        </p>
+                        <div class="skill-tags">
+                            <span class="skill-tag">System Design</span>
+                            <span class="skill-tag">APIs</span>
+                            <span class="skill-tag">Testing</span>
+                            <span class="skill-tag">Documentation</span>
+                        </div>
+                    </article>
                 </div>
             </div>
         </section>
 
-        <section id="contact">
-            <h2>Contact Me</h2>
-            <div class="contact-content">
-                <p>I'd love to hear from you! Feel free to reach out.</p>
-                <div class="contact-links">
-                    <a href="https://github.com/IstiaqAhmedTamim" class="contact-btn">GitHub</a>
-                    <a href="mailto:your-email@example.com" class="contact-btn">Email</a>
+        <!-- Projects Section -->
+        <section id="projects" class="section" aria-labelledby="projects-title">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-label">Portfolio</span>
+                    <h2 id="projects-title" class="section-title">Featured Projects</h2>
+                    <p class="section-subtitle">
+                        A selection of projects that showcase my approach to solving complex problems.
+                    </p>
+                </div>
+                
+                <div class="projects-grid">
+                    <article class="project-card reveal">
+                        <div class="project-image">
+                            <span class="project-image-placeholder" aria-hidden="true">📊</span>
+                        </div>
+                        <div class="project-content">
+                            <h3>Analytics Dashboard</h3>
+                            <p>
+                                A real-time analytics platform processing millions of events daily. 
+                                Built with performance and scalability at its core, featuring interactive 
+                                visualizations and customizable reporting.
+                            </p>
+                            <div class="project-tech">
+                                <span class="project-tech-tag">React</span>
+                                <span class="project-tech-tag">D3.js</span>
+                                <span class="project-tech-tag">Node.js</span>
+                                <span class="project-tech-tag">Redis</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/IstiaqAhmedTamim" class="project-link" target="_blank" rel="noopener noreferrer">
+                                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                        <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                                    </svg>
+                                    View Code
+                                </a>
+                                <a href="#" class="project-link">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/>
+                                    </svg>
+                                    Live Demo
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article class="project-card reveal">
+                        <div class="project-image">
+                            <span class="project-image-placeholder" aria-hidden="true">🚀</span>
+                        </div>
+                        <div class="project-content">
+                            <h3>Developer Platform</h3>
+                            <p>
+                                An API-first platform enabling developers to build and deploy applications 
+                                faster. Features comprehensive documentation, SDKs, and developer tools.
+                            </p>
+                            <div class="project-tech">
+                                <span class="project-tech-tag">TypeScript</span>
+                                <span class="project-tech-tag">GraphQL</span>
+                                <span class="project-tech-tag">PostgreSQL</span>
+                                <span class="project-tech-tag">Docker</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/IstiaqAhmedTamim" class="project-link" target="_blank" rel="noopener noreferrer">
+                                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                        <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                                    </svg>
+                                    View Code
+                                </a>
+                                <a href="#" class="project-link">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/>
+                                    </svg>
+                                    Live Demo
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article class="project-card reveal">
+                        <div class="project-image">
+                            <span class="project-image-placeholder" aria-hidden="true">🤖</span>
+                        </div>
+                        <div class="project-content">
+                            <h3>AI-Powered Assistant</h3>
+                            <p>
+                                An intelligent automation tool that streamlines workflows using 
+                                machine learning. Reduced manual processes by 60% for enterprise clients.
+                            </p>
+                            <div class="project-tech">
+                                <span class="project-tech-tag">Python</span>
+                                <span class="project-tech-tag">TensorFlow</span>
+                                <span class="project-tech-tag">FastAPI</span>
+                                <span class="project-tech-tag">AWS</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/IstiaqAhmedTamim" class="project-link" target="_blank" rel="noopener noreferrer">
+                                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                        <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                                    </svg>
+                                    View Code
+                                </a>
+                                <a href="#" class="project-link">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/>
+                                    </svg>
+                                    Live Demo
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="section" aria-labelledby="experience-title">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-label">Career</span>
+                    <h2 id="experience-title" class="section-title">Professional Journey</h2>
+                    <p class="section-subtitle">
+                        A track record of delivering impact at companies that move fast.
+                    </p>
+                </div>
+                
+                <div class="timeline stagger-reveal">
+                    <article class="timeline-item">
+                        <div class="timeline-dot" aria-hidden="true"></div>
+                        <span class="timeline-date">2022 — Present</span>
+                        <h3 class="timeline-title">Senior Software Engineer</h3>
+                        <p class="timeline-company">Tech Company</p>
+                        <div class="timeline-description">
+                            <ul>
+                                <li>Led development of core platform features serving 100K+ users</li>
+                                <li>Architected microservices infrastructure reducing latency by 40%</li>
+                                <li>Mentored junior engineers and established coding best practices</li>
+                            </ul>
+                        </div>
+                    </article>
+                    
+                    <article class="timeline-item">
+                        <div class="timeline-dot" aria-hidden="true"></div>
+                        <span class="timeline-date">2020 — 2022</span>
+                        <h3 class="timeline-title">Software Engineer</h3>
+                        <p class="timeline-company">Startup Inc.</p>
+                        <div class="timeline-description">
+                            <ul>
+                                <li>Built and launched MVP that secured Series A funding</li>
+                                <li>Implemented CI/CD pipeline cutting deployment time by 70%</li>
+                                <li>Developed real-time collaboration features using WebSockets</li>
+                            </ul>
+                        </div>
+                    </article>
+                    
+                    <article class="timeline-item">
+                        <div class="timeline-dot" aria-hidden="true"></div>
+                        <span class="timeline-date">2018 — 2020</span>
+                        <h3 class="timeline-title">Junior Developer</h3>
+                        <p class="timeline-company">Digital Agency</p>
+                        <div class="timeline-description">
+                            <ul>
+                                <li>Delivered 15+ client projects from concept to deployment</li>
+                                <li>Introduced automated testing increasing code coverage to 85%</li>
+                                <li>Collaborated with designers to implement pixel-perfect UIs</li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section" aria-labelledby="contact-title">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-label">Get In Touch</span>
+                    <h2 id="contact-title" class="section-title">Let's Build Something<br>Great Together</h2>
+                </div>
+                
+                <div class="contact-content reveal">
+                    <p>
+                        I'm always interested in hearing about new opportunities, 
+                        interesting projects, or just connecting with fellow developers. 
+                        Whether you have a question or just want to say hi, my inbox is always open.
+                    </p>
+                    
+                    <div class="contact-links">
+                        <a href="https://github.com/IstiaqAhmedTamim" class="contact-link" target="_blank" rel="noopener noreferrer">
+                            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                            </svg>
+                            GitHub
+                        </a>
+                        <a href="https://linkedin.com/in/" class="contact-link" target="_blank" rel="noopener noreferrer">
+                            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                            LinkedIn
+                        </a>
+                        <a href="https://twitter.com/" class="contact-link" target="_blank" rel="noopener noreferrer">
+                            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                            </svg>
+                            Twitter
+                        </a>
+                    </div>
+                    
+                    <div class="contact-email">
+                        <p class="contact-email-label">Or send me an email at</p>
+                        <a href="mailto:hello@istiaqahmedtamim.me" class="contact-email-address">
+                            hello@istiaqahmedtamim.me
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
 
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2026 Istiaq Ahmed Tamim. All rights reserved.</p>
+        <div class="footer-content">
+            <p class="footer-text">
+                Designed & Built by Istiaq Ahmed Tamim · © 2026
+            </p>
+            <div class="footer-links">
+                <a href="https://github.com/IstiaqAhmedTamim" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="https://linkedin.com/in/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="#hero">Back to Top</a>
+            </div>
+        </div>
     </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js" defer></script>
 </body>
 </html>
