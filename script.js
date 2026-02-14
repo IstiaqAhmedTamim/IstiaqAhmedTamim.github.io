@@ -251,10 +251,4 @@
     });
   }
   
-  // ==================== CONSOLE MESSAGE ====================
-  console.log(
-    '%c Built with ❤️ by Istiaq Ahmed Tamim ',
-    'background: linear-gradient(135deg, #6366f1, #a855f7); color: white; padding: 10px 20px; border-radius: 4px; font-size: 14px;'
-  );
-  
-})();
+})();;

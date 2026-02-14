@@ -27,8 +27,8 @@
   --glass-border: rgba(255, 255, 255, 0.08);
   --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   
-  /* Spacing - 8px Grid System */
-  --space-1: 0.25rem;  /* 4px */
+  /* Spacing - Based on 4px unit, scaling with 8px grid harmony */
+  --space-1: 0.25rem;  /* 4px - half unit */
   --space-2: 0.5rem;   /* 8px */
   --space-3: 0.75rem;  /* 12px */
   --space-4: 1rem;     /* 16px */
