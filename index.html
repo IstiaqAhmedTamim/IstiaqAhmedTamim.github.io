@@ -51,10 +51,24 @@
         </nav>
     </header>
 
+    <!-- Preloader -->
+    <div id="preloader" aria-hidden="true">
+        <div class="preloader-content">
+            <div class="preloader-logo">IAT</div>
+            <div class="preloader-bar"><div class="preloader-bar-fill"></div></div>
+        </div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" aria-hidden="true"></div>
+    <div class="cursor-ring" aria-hidden="true"></div>
+
     <main>
         <!-- Hero Section -->
         <section id="hero" aria-labelledby="hero-title">
-            <!-- Animated Background Orbs -->
+            <!-- Interactive Particle Canvas -->
+            <canvas id="heroCanvas" class="hero-canvas" aria-hidden="true"></canvas>
+            <!-- Animated Background Orbs (kept for color atmosphere) -->
             <div class="hero-bg" aria-hidden="true">
                 <div class="hero-orb hero-orb-1"></div>
                 <div class="hero-orb hero-orb-2"></div>
