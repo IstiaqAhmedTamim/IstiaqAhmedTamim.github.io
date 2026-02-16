@@ -664,7 +664,7 @@ nav {
 
 .about-stats {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: var(--space-6);
 }
 
@@ -1122,6 +1122,10 @@ footer {
   
   .project-card:nth-child(even) {
     direction: ltr;
+  }
+  
+  .about-stats {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
