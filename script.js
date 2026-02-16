@@ -7,6 +7,14 @@
 (function() {
   'use strict';
 
+  // ==================== CONSTANTS ====================
+  const CURSOR_LAG_FACTOR = 0.15;
+  const PIXELS_PER_PARTICLE = 18;
+  const MOUSE_ATTRACTION_RADIUS = 200;
+  const MAX_CONNECTION_DISTANCE = 150;
+  const COUNTER_ANIMATION_MS = 1800;
+  const MAX_TILT_DEGREES = 6;
+
   // ==================== DOM REFERENCES ====================
   const header = document.getElementById('header');
   const menuToggle = document.getElementById('menuToggle');
@@ -41,8 +49,8 @@
     });
 
     function animateRing() {
-      ringX += (mouseX - ringX) * 0.15;
-      ringY += (mouseY - ringY) * 0.15;
+      ringX += (mouseX - ringX) * CURSOR_LAG_FACTOR;
+      ringY += (mouseY - ringY) * CURSOR_LAG_FACTOR;
       cursorRing.style.left = ringX + 'px';
       cursorRing.style.top = ringY + 'px';
       requestAnimationFrame(animateRing);
@@ -79,7 +87,7 @@
     const ctx = canvas.getContext('2d');
     let particles = [];
     let canvasMouseX = 0, canvasMouseY = 0;
-    const particleCount = Math.min(80, Math.floor(window.innerWidth / 18));
+    const particleCount = Math.min(80, Math.floor(window.innerWidth / PIXELS_PER_PARTICLE));
 
     function resizeCanvas() {
       canvas.width = window.innerWidth;
@@ -105,7 +113,7 @@
         const dx = canvasMouseX - this.x;
         const dy = canvasMouseY - this.y;
         const dist = Math.sqrt(dx * dx + dy * dy);
-        if (dist < 200 && dist > 0) {
+        if (dist < MOUSE_ATTRACTION_RADIUS && dist > 0) {
           this.vx += (dx / dist) * 0.02;
           this.vy += (dy / dist) * 0.02;
         }
@@ -139,8 +147,8 @@
           const dx = particles[i].x - particles[j].x;
           const dy = particles[i].y - particles[j].y;
           const dist = Math.sqrt(dx * dx + dy * dy);
-          if (dist < 150) {
-            const opacity = (1 - dist / 150) * 0.15;
+          if (dist < MAX_CONNECTION_DISTANCE) {
+            const opacity = (1 - dist / MAX_CONNECTION_DISTANCE) * 0.15;
             ctx.beginPath();
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(particles[j].x, particles[j].y);
@@ -367,7 +375,7 @@
   // ==================== ANIMATED STAT COUNTERS ====================
   function animateCounter(el, target, suffix) {
     const isFloat = String(target).includes('.');
-    const duration = 1800;
+    const duration = COUNTER_ANIMATION_MS;
     const startTime = performance.now();
 
     function step(currentTime) {
@@ -426,8 +434,8 @@
         const centerX = rect.width / 2;
         const centerY = rect.height / 2;
 
-        const rotateX = ((y - centerY) / centerY) * -6;
-        const rotateY = ((x - centerX) / centerX) * 6;
+        const rotateX = ((y - centerY) / centerY) * -MAX_TILT_DEGREES;
+        const rotateY = ((x - centerX) / centerX) * MAX_TILT_DEGREES;
 
         card.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(4px)`;
       });
